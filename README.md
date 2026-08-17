@@ -132,6 +132,8 @@ The principal adequacy metric is Great Britain Loss of Load Expectation (LOLE), 
 
 All commands in this README assume that they are executed from the root directory of the repository.
 
+The results/ directory contains the final figures reported in Chapters 4 and 5 of the dissertation. Running the reproduction scripts generates the underlying numerical outputs and reproduced figures from the supplied input data.
+
 ## Dissertation
 
 This repository accompanies an MSc dissertation undertaken at the University of Edinburgh.
