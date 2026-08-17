@@ -1,8 +1,8 @@
 # Two-Area Capacity Market
 
-This repository contains the data and Python code used to reproduce the numerical analyses presented in Chapters 4 and 5 of an MSc dissertation on capacity value in a GB–Ireland two-area power system.
+This repository contains the data, Python code, and selected final results used to support the numerical analyses presented in Chapters 4 and 5 of an MSc dissertation on capacity value in a GB–Ireland two-area power system.
 
-The analysis evaluates the contribution of resources located in Ireland to Great Britain (GB) generation adequacy, with particular emphasis on Equivalent Firm Capacity (EFC), interconnector capacity, background adequacy conditions, wind generation, and portfolio interactions.
+The analysis considers how resources located in Ireland contribute to Great Britain (GB) generation adequacy, with particular emphasis on Equivalent Firm Capacity (EFC), interconnector capacity, background adequacy conditions, wind generation, and portfolio interactions.
 
 ## Repository Structure
 
@@ -19,43 +19,69 @@ Two-Area-Capacity-Market/
 │   ├── InterconnectionData_Rescaled.txt
 │   └── InterconnectionData_peak.txt
 │
+├── results/
+│   ├── chapter4/
+│   │   ├── ch4_additional_wind_efc.png
+│   │   ├── ch4_controlled_background_efc.png
+│   │   ├── ch4_conventional_location_efc.png
+│   │   ├── ch4_whole_wind_efc.png
+│   │   └── ch4_wind_accessible_fraction.png
+│   │
+│   └── chapter5/
+│       ├── ch5_efc_decomposition.png
+│       ├── ch5_ireland_ireland_backgrounds.png
+│       ├── ch5_location_controls.png
+│       └── ch5_overlap_complementarity.png
+│
 ├── requirements.txt
 └── README.md
 ```
 
-### `data/`
+## Data
 
-The `data/` directory contains the input data used in the GB–Ireland adequacy model.
+The `data/` directory contains the input data used in the GB–Ireland adequacy calculations.
 
-* `GB_anonymised_conv.txt` contains the conventional generation data for Great Britain.
-* `I_conv.txt` contains the conventional generation data for Ireland.
+* `GB_anonymised_conv.txt` contains conventional generation data for Great Britain.
+* `I_conv.txt` contains conventional generation data for Ireland.
 * `InterconnectionData_Rescaled.txt` contains the demand and wind-generation time series used in the main adequacy calculations.
 * `InterconnectionData_peak.txt` is retained as part of the input dataset used in the analysis.
 
-### `code/chapter4_reproduce.py`
+## Code
 
-This script reproduces the numerical analysis presented in Chapter 4.
+### Chapter 4
 
-The Chapter 4 analysis focuses on the capacity value of individual resources located in Ireland with respect to GB adequacy, including:
+`code/chapter4_reproduce.py` reproduces the numerical analysis presented in Chapter 4.
+
+The analysis includes:
 
 * EFC calculations for conventional resources;
 * sensitivity to interconnector capacity;
 * controlled GB background adequacy conditions;
-* the capacity value of additional Irish wind generation; and
-* the capacity value of the existing Irish wind fleet.
+* capacity value of additional Irish wind generation; and
+* capacity value of the existing Irish wind fleet.
 
-### `code/chapter5_reproduce.py`
+### Chapter 5
 
-This script reproduces the numerical analysis presented in Chapter 5.
+`code/chapter5_reproduce.py` reproduces the numerical analysis presented in Chapter 5.
 
-The Chapter 5 analysis focuses on portfolio effects and the mechanisms underlying the capacity-value results, including:
+The analysis includes:
 
 * portfolio EFC calculations;
-* comparison of resource-location configurations;
+* comparison of different resource-location configurations;
 * portfolio non-additivity and subadditivity;
 * sensitivity to interconnector capacity and GB background adequacy;
 * limiting-case behaviour; and
-* simplified numerical diagnostics used to investigate the drivers of the observed results.
+* simplified numerical diagnostics used to investigate the mechanisms underlying the observed portfolio effects.
+
+## Results
+
+The `results/` directory contains the final figures reported in Chapters 4 and 5 of the dissertation.
+
+The Chapter 4 figures cover the capacity value of conventional resources and Irish wind generation under different interconnector and adequacy conditions.
+
+The Chapter 5 figures cover portfolio interactions, resource-location comparisons, EFC decomposition, and the diagnostics used to investigate portfolio non-additivity.
+
+These files are provided as archived final results corresponding to the submitted dissertation. Running the reproduction scripts generates new numerical outputs and figures from the supplied input data, which can be compared with the archived results in this directory.
 
 ## Requirements
 
@@ -128,14 +154,12 @@ The script also contains optional computation, plotting, and verification functi
 
 The scripts implement the adequacy and capacity-value methodology used in the dissertation and are provided to support reproduction of the numerical results reported in Chapters 4 and 5.
 
-The principal adequacy metric is Great Britain Loss of Load Expectation (LOLE), while resource capacity value is evaluated using Equivalent Firm Capacity (EFC). The EFC comparator is firm capacity located in Great Britain.
+The principal adequacy metric is Great Britain Loss of Load Expectation (LOLE), while resource capacity value is evaluated using Equivalent Firm Capacity (EFC). The EFC comparator is perfectly reliable firm capacity located in Great Britain.
 
 All commands in this README assume that they are executed from the root directory of the repository.
-
-The results/ directory contains the final figures reported in Chapters 4 and 5 of the dissertation. Running the reproduction scripts generates the underlying numerical outputs and reproduced figures from the supplied input data.
 
 ## Dissertation
 
 This repository accompanies an MSc dissertation undertaken at the University of Edinburgh.
 
-The repository is intended to provide the data and computational material required to reproduce the principal numerical analyses presented in Chapters 4 and 5.
+It provides the input data, computational code, and selected final outputs required to support and reproduce the principal numerical analyses presented in Chapters 4 and 5.
