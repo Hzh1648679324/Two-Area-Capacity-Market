@@ -157,9 +157,3 @@ The scripts implement the adequacy and capacity-value methodology used in the di
 The principal adequacy metric is Great Britain Loss of Load Expectation (LOLE), while resource capacity value is evaluated using Equivalent Firm Capacity (EFC). The EFC comparator is perfectly reliable firm capacity located in Great Britain.
 
 All commands in this README assume that they are executed from the root directory of the repository.
-
-## Dissertation
-
-This repository accompanies an MSc dissertation undertaken at the University of Edinburgh.
-
-It provides the input data, computational code, and selected final outputs required to support and reproduce the principal numerical analyses presented in Chapters 4 and 5.
